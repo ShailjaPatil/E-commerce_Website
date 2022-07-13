@@ -1,0 +1,51 @@
+ADMIN
+-------------
+1. Login-> update session variable
+
+2. vlaidate the login status 
+    upload products(image)
+        large files will be splitted as multiple chunks(multipart/form-data)
+    view products
+    delete products -> recieve prdt id  
+    edit product-> recieve prdt id----- TRY IT
+    view orders->later
+
+3.DB-SCHEMA
+    products
+    pid
+    name vaechar(45)
+    details text
+    price float
+    imageLocation varchar(100)
+    orders
+
+
+USERS
+--------------------
+1. Register
+
+2. Login    
+        validate user
+        store username and login status in session
+        add empty cart array in the session
+        Altered the tabel to include id
+
+3. View products
+   I) add to cart--> session  
+    pass the pid to addtocart.php
+    check pid is available in session cart 
+            if pid avilable 
+                echo item already in cart
+
+            if pid not avilable
+                add new
+                array_push($localcart,$pid)
+
+        session_start()
+        $localcart=$_SESSION['cart']
+
+        array search (product already doesnot exist)
+        array delete  (remove element from cart)
+        array push   (add element to cart)
+
+   II) place order
